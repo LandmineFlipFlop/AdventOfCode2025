@@ -7,6 +7,8 @@ with open ('01_data/full_data', 'r') as casefile:
     lines = casefile.read().splitlines()
 startTime = time.time()
 count = 0
+# setup and data import
+
 
 dialnum = 50
 for turn in lines:
@@ -16,12 +18,11 @@ for turn in lines:
             dialnum += 1
         else:
             dialnum -= 1
-        dialnum = dialnum % 100
+        dialnum %= 100
+
         if dialnum == 0:
             count += 1
         i += 1
-
-
 
 
 
