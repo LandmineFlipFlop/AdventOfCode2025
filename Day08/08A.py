@@ -30,16 +30,19 @@ def findshortest():
     for line1 in lines:
         for line2 in lines:
             if line1 != line2:
-                if dist(line1[0],line1[1],line1[2],line2[0],line2[1],line2[2]) < lowest:
-                    if not ([lowpos1,lowpos2] in shortpath or [lowpos2,lowpos1] in shortpath):
+                if not ( [line1,line2] in shortpath or [line2,line1] in shortpath ):
+                    if dist(line1[0],line1[1],line1[2],line2[0],line2[1],line2[2]) < lowest:
                         lowest = dist(line1[0],line1[1],line1[2],line2[0],line2[1],line2[2])
                         lowpos1 = line1
                         lowpos2 = line2
     shortpath.append([lowpos1,lowpos2])
-    print(green(lowest), shortpath)
+    print(blue(shortpath[len(shortpath)-1][0]) + ', ' + blue(shortpath[len(shortpath)-1][1]))
+    lowpos1 = []
+    lowpos2 = []
+
 
 i = 0
-while i < 4:
+while i < length:
     findshortest()
     i += 1
 
