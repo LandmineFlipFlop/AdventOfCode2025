@@ -41,6 +41,10 @@ for line1 in lines:
 
 dists.sort(key=sorter)
 
+for dist in dists:
+    print(blue(dist[0]),yellow(dist[1]))
+
+
 
 print(green("count: " + str(count)))
 timerstop(startTime)

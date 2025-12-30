@@ -24,7 +24,7 @@ while i < len(lines):
 
 for coord1 in lines:
     for coord2 in lines:
-        size =abs( (coord2[0] - coord1[0]) + 1) * abs( (coord2[1] - coord1[1]) + 1)
+        size = ( abs( (coord2[0] - coord1[0]) ) + 1) * ( abs( (coord2[1] - coord1[1]) ) + 1)
         if  size > count and allgreen(coord1,coord2):
             count = size
 
